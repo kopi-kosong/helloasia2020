@@ -8,7 +8,7 @@
 
       <div class="uk-card uk-card-default uk-card-small uk-margin-small-top">
         <div class="uk-card-header">
-          <h2 class="uk-h4">Caller info</h2>
+          <h2 class="uk-h4">Staff info</h2>
         </div>
         <div class="uk-card-body">
           <ul class="uk-list">
@@ -25,7 +25,7 @@
           <div class="uk-card uk-card-default uk-width-3-4 uk-width-3-5@m uk-align-center">
             <form v-on:submit.prevent="onSubmit">
               <div class="uk-card-header">
-                <p class="uk-h3">Welcome to XYZ Corporation</p>
+                <p class="uk-h3">Welcome to Hello Asia IT Help Desk</p>
                 <p>Contact our audio/video call center</p>
               </div>
               <div class="uk-card-body">
