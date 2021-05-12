@@ -49,6 +49,7 @@
     "css-loader": "^0.28.7",
     "express": "^4.16.2",
     "file-loader": "^1.1.4",
+    "nexmo": "^2.9.1",
     "opentok": "^2.6.1",
     "vue": "^2.5.11",
     "vue-loader": "^13.0.5",

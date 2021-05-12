@@ -383,6 +383,39 @@ app.use('/', express.static('./public'))
  * Called by callers when they join. This creates a new caller and attempts to assign the caller to an available agent.
  */
 app.post('/dial', (req, res, next) => {
+
+  console.log('SMS !!!');
+	const NEXMO_API_KEY = '267a8d9f'
+const NEXMO_API_SECRET = 'Crab2020!'
+const TO_NUMBER = '6590110222'
+const NEXMO_BRAND_NAME = 'IT HELPDESK'
+const Nexmo = require('nexmo')
+const nexmo = new Nexmo({
+  apiKey: NEXMO_API_KEY,
+  apiSecret: NEXMO_API_SECRET
+})
+
+const from = NEXMO_BRAND_NAME
+const to = TO_NUMBER
+//const text = 'You have a taxi booking for pickup at Dover Road.' 
+const text = 'Hello, a staff needs your help at https://test-video-call-center.herokuapp.com/ ,😂こんにちは世界'
+const opts = {
+  "type": "unicode"
+}
+
+nexmo.message.sendSms(from, to, text, opts, (err, responseData) => {
+    if (err) {
+        console.log(err);
+    } else {
+        if(responseData.messages[0]['status'] === "0") {
+            console.log("Message sent successfully.");
+        } else {
+            console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+        }
+    }
+})
+
+
   const c = new Caller()
   c.callerName = req.body.callerName
   c.callerReason = req.body.callerReason
